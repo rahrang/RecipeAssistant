@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	background-color: #1ABC9C;
+	background-color: #373737;
 	margin: none;
 	padding: none;
 }
@@ -21,6 +21,56 @@ nav#navigation-bar {
 	padding-bottom: 5px;
 }
 
+h1 {
+	text-align: center;
+	font-family: "Quicksand";
+	font-size: 50px;
+	color:white;
+}
+
+.table--recipe {
+	margin: 0 auto;
+	margin-top: 1%;
+
+}
+.table--item {
+	border-style: dotted;
+	border-color: white;
+	padding: 2%;
+	display: inline-block;
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 3%;
+
+}
+.recipe--pic img{
+	border-radius: 12%;
+	width: 35vh;
+}
+
+.recipe--name {
+	margin-left: 40%;
+	margin-top:5%;
+	font-size: 18px;
+	font-family: "Open Sans";
+	color: white;
+
+}
+
+.icon--wrap {
+	margin-left: 15%;
+}
+.icon--wrap img{
+	display: inline-block;
+	float: center;
+	margin-left: 15%;
+	width: 18%;
+	height: 19%;
+
+}
+
+
+
 a#logo {
 	color: white;
 	margin-top: 4%;
@@ -38,7 +88,8 @@ a#logo {
 }
 
 .ranga {
-	font-family: Ranga, "sans-serif";
+	font-family:Raleway;
+
 }
 
 .mont {
