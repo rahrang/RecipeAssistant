@@ -1,0 +1,46 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	background-color: #1ABC9C;
+	margin: none;
+	padding: none;
+}
+
+nav#navigation-bar {
+	position: absolute;
+	display: inline;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+/*	background-color: #ECFOF1;*/
+	background-color: rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: none;
+	padding-bottom: 5px;
+}
+
+a#logo {
+	color: white;
+	margin-top: 4%;
+	font-size: 3em;
+}
+
+.icon {
+	opacity: 1;
+	height: 50%;
+	width: 50%;
+}
+
+.icon:hover {
+	opacity: 0.75;
+}
+
+.ranga {
+	font-family: Ranga, "sans-serif";
+}
+
+.mont {
+	font-family: Montserrat, "sans-serif";
+}
