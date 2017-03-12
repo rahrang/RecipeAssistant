@@ -1,2 +1,3 @@
 # RecipeAssistant
-web ui for cs 160, prog 03, spring 2017
+Web UI for CS 160-PROG03 (Spring 2017)
+
