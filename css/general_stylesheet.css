@@ -109,3 +109,26 @@ p#names {
 	font-size: 1.125em;
 	line-height: 1.375em;
 }
+
+/*Style the image slideshow fades*/
+
+.animate-fading {
+	-webkit-animation: fading 6s infinite;
+	animation: fading 6s infinite;
+}
+
+@-webkit-keyframes fading {	
+	0% {opacity:0.5;}
+	5% {opacity:1;}
+/*	20% {opacity:1}*/
+	95% {opacity:1;}
+	100% {opacity:0.5;}
+}
+
+@keyframes fading {	
+	0% {opacity:0.5;}
+	5% {opacity:1;}
+/*	20% {opacity:1}*/
+	95% {opacity:1;}
+	100% {opacity:0.5;}
+}
