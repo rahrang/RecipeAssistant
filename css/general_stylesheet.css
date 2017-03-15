@@ -47,7 +47,7 @@ h2 {
 }
 
 .table--item:hover{
-	border: 4px dotted #ddd;
+	border: 4px dotted white;
   }
 
 .recipe--pic img{
