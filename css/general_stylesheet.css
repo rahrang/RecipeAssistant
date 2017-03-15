@@ -172,7 +172,8 @@ p#names {
 
 @media(max-width: 800px) {
 	.table--item {
-		margin-left: 16%;
+		margin-left: 14%;
 		margin-top: 5%;
+		padding: 5%;
 	}
 }
