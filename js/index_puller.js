@@ -49,7 +49,9 @@ $(document).ready( function() {
 	var databaseSize = 0;
 	$.get(databaseURL, function(data) {
 		databaseSize = data.Count;
+//		alert(databaseSize);
 	});
+	
 	
 //	variables to help us in creating hyperlinks
 	var recipeName = "";
@@ -66,6 +68,8 @@ $(document).ready( function() {
 	$.get(databaseURL, function(data) {
 		
 		for (var index = 0; index < databaseSize; index++) {
+			
+//			alert("index" + index);
 
 			// changes the source of the img tag with id "dish-img-INDEX" to corresponding source URL in the database
 			$(dishImg + index).attr("src", data.Items[index].ImageURL);  

@@ -45,7 +45,8 @@ h1 {
 }
 .recipe--pic img{
 	border-radius: 12%;
-	width: 35vh;
+	width: 280px;
+	height: 280px;
 }
 
 .recipe--name {
@@ -108,6 +109,22 @@ p#names {
 	letter-spacing: 0.125em;
 	font-size: 1.125em;
 	line-height: 1.375em;
+}
+
+.buffer {
+	margin-top: 4%;
+}
+
+#submit-button {
+	background-color: #1ABC9C;
+	color: white;
+	border: solid white 3px;
+	padding: 1%;
+}
+
+#submit-button:hover {
+	background-color: white;
+	color: #373737;
 }
 
 /*Style the image slideshow fades*/
