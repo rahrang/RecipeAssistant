@@ -3,7 +3,7 @@
 
 body {
 	/*background-color: #373737;*/
-	background-color: #1ABC9C;
+	background-color: #5B7772;
 	margin: none;
 	padding: none;
 }
@@ -42,11 +42,14 @@ h2 {
 	border-color: white;
 	padding: 2%;
 	display: inline-block;
-	margin-left: 5%;
-	margin-right: 5%;
+	margin-left: 9.48%;
 	margin-top: 3%;
-
 }
+
+.table--item:hover{
+	border: 4px dotted #ddd;
+  }
+
 .recipe--pic img{
 	border-radius: 12%;
 	width: 225px;
@@ -165,4 +168,11 @@ p#names {
 /*	20% {opacity:1}*/
 	95% {opacity:1;}
 	100% {opacity:0.5;}
+}
+
+@media(max-width: 800px) {
+	.table--item {
+		margin-left: 16%;
+		margin-top: 5%;
+	}
 }
