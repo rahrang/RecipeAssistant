@@ -4,9 +4,11 @@
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
-
-	<title>Add a Recipe - My Recipe Assistant</title>
 	
+	<title>Ingredients - My Recipe Assistant</title>
+
+	<!--Metas for Web Searches-->
+
 	<!--Favicon-->
 	<link rel="shortcut icon" href="#" >
 
@@ -43,6 +45,12 @@
 		<div class="collapse navbar-collapse" id="navigator">
 			<ul id="main-navigation" class="nav navbar-nav navbar-right">
 				<li>
+					<a href="#"><img class="icon" src="icons/back.png" alt="back icon"></a>
+				</li>
+				<li>
+					<a href="index.html"><img class="icon" src="icons/home.png" alt="home icon"></a>
+				</li>
+				<li>
 					<a href="#"><img class="icon" src="icons/search.png" alt="search icon"></a>
 				</li>
 				<li>
@@ -57,32 +65,25 @@
 </nav>
 
 <div class="container-fluid buffer">
-
+	
 	<hr>
-	<h1> Add a Recipe </h1>
+	<h1 id="recipe-title"> Recipe </h1>
 	<hr>
-			
-	<div class="row open-sans text-left">
-		
-		<div class="col-sm-2"></div>
-		<div class="col-sm-8">
-			
-			<form id="input-recipe" method="post">
-				
-				<b>Recipe Name</b> <br> 
-				<input type="text" id="recipe_name" name="recp"> <br><br>
-				<b>Recipe Image</b> (URL) <br>
-				<input type="text" id="image_link" name="imag"><br><br>
-				<b>Ingredients</b> (please enter one ingredient per line)<br>
-				<textarea id="ingredients" name="ingred" rows="10" cols="70"></textarea> <br><br>
-				<b>Directions</b> (please enter one step per line) <br>
-				<textarea id="steps" name="direct" rows="10" cols="70"></textarea> <br><br>
-				<input id="submit-button" onclick="submitForm()" type="submit" value="Confirm Recipe">
-				
-			</form>
-			
+	
+	<img id="recipe-image" class="center-block img-responsive main-img" src="http://lorempixel.com/500/500/food" />
+	
+	<br>
+	
+	<div class="row white">
+		<h2 class="text-center">Ingredients</h2>		
+	</div>
+	
+	<div class="row white">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<p id="ingredients-section" class="text-left"></p>
 		</div>
-		<div class="col-sm-2"></div>
+		<div class="col-sm-3"></div>
 	</div>
 	
 </div>
@@ -93,43 +94,7 @@
 	</div>
 </div>
 
-<script>
-	
-var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
-	
-function submitForm() {
-	
-	"use strict";
-
-//	alert("button clicked!");
-	var recipe_name = document.getElementById("recipe_name").value;
-//	alert(recipe_name);
-	var directions = document.getElementById("steps").value;
-//	alert(directions);
-	var ingred = document.getElementById("ingredients").value;
-//	alert(ingred);
-	var image_link = document.getElementById("image_link").value;
-//	alert(image_link);
-
-	$.post(databaseURL, JSON.stringify(
-	{
-		"type": "POST",
-		"data": {
-			"TableName": "Recipes",
-			"Item": {
-				"RecipeName": recipe_name,
-				"Directions": directions,
-				"Ingredients": ingred,
-				"ImageURL": image_link
-			}
-		}
-	}));
-	
-//	alert("ended");
-	
-};
-	
-</script>
+<script src="js/ingredients_puller.js" type="text/javascript"></script>
 
 </body>
 </html>

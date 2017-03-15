@@ -28,6 +28,10 @@ h1 {
 	color:white;
 }
 
+h2 {
+	font-size: 2.125em;
+}
+
 .table--recipe {
 	margin: 0 auto;
 	margin-top: 1%;
@@ -91,8 +95,8 @@ a#logo {
 
 }
 
-.mont {
-	font-family: Montserrat, "sans-serif";
+.open-sans {
+	font-family: Open Sans, "sans-serif";
 }
 
 div#footer {
@@ -125,6 +129,19 @@ p#names {
 #submit-button:hover {
 	background-color: white;
 	color: #373737;
+}
+
+.main-img {
+	height: 50vh;
+	width: 60vh;
+}
+
+.white {
+	color: white;
+}
+
+#ingredients-section, #directions-section {
+	font-size: 1.25em;
 }
 
 /*Style the image slideshow fades*/
