@@ -7,7 +7,7 @@ $(document).ready( function() {
 	var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
 	
 //	Change this if/when we publish the website
-	var webpageURL = "file:///C:/Users/Rahul/Desktop/CS160/prog03/";
+	var webpageURL = "";
 	
 	// data == the entire table
 	// data.Items == the items in the table (each dish/recipe)
