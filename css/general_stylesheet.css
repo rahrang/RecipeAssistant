@@ -3,7 +3,8 @@
 
 body {
 	/*background-color: #373737;*/
-	background-color: #5B7772;
+	background-color: #95a5a6;
+
 	margin: none;
 	padding: none;
 }
@@ -175,5 +176,8 @@ p#names {
 		margin-left: 14%;
 		margin-top: 5%;
 		padding: 5%;
+	}
+	.icon--wrap img{
+		height:2%;
 	}
 }
