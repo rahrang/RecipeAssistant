@@ -49,10 +49,10 @@
 					<a href="add-recipe.html"><img class="icon" src="icons/add.png" alt="add an item icon"></a>
 				</li>
 				<li>
-					<a href="index.html"><img class="icon" src="icons/settings.png" alt=""></a>
+					<a href="#"><img class="icon" src="icons/settings.png" alt=""></a>
 				</li>
 				<li>
-					<a href="index.html"><img class="icon" src="icons/search.png" alt=""></a>
+					<a href="#"><img class="icon" src="icons/search.png" alt=""></a>
 				</li>
 			</ul>			
 		</div>
@@ -80,7 +80,7 @@
 				<textarea id="ingredients" name="ingred" rows="10" cols="70"></textarea> <br><br>
 				<b>Directions</b> (please enter one step per line) <br>
 				<textarea id="steps" name="direct" rows="10" cols="70"></textarea> <br><br>
-				<input id="submit-button" onclick="submitForm()" type="submit" value="Confirm Recipe">
+				<input id="submit-button" onclick="submitForm()" type="submit" value="Submit">
 				
 			</form>
 			
@@ -113,22 +113,27 @@ function submitForm() {
 //	alert(ingred);
 	var image_link = document.getElementById("image_link").value;
 //	alert(image_link);
-
-	$.post(databaseURL, JSON.stringify(
+	
+	var to_post = JSON.stringify(
 	{
 		"type": "POST",
 		"data": {
 			"TableName": "Recipes",
-			"Item": {
+//			"Item": {
+			"Items": {
 				"RecipeName": recipe_name,
 				"Directions": directions,
 				"Ingredients": ingred,
 				"ImageURL": image_link
 			}
 		}
-	}));
+	})
 	
-//	alert("ended");
+	alert(to_post);
+	
+	$.post(databaseURL, to_post);
+	
+	alert("ended");
 	
 };
 	

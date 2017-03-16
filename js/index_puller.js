@@ -7,7 +7,7 @@ $(document).ready( function() {
 	var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
 	
 //	Change this if/when we publish the website
-	var webpageURL = "";
+//	var webpageURL = "";
 	
 	// data == the entire table
 	// data.Items == the items in the table (each dish/recipe)
@@ -45,22 +45,16 @@ $(document).ready( function() {
 	in order to 'fill out' the corresponding id's (example: dish-img-1) with the correct values
 	from that dish */	
 	
-//	Get the number of dishes/recipes in the database
+	//	Get the number of dishes/recipes in the database
 	var databaseSize = 0;
 	$.get(databaseURL, function(data) {
 		databaseSize = data.Count;
-//		alert(databaseSize);
 	});
-	
-	
-//	variables to help us in creating hyperlinks
-//	var recipeName = "";
-//	var shortName = "";
-	
+		
 //	variables to help us update corresponding html tags
 	var dishImg = "#dish-img-";
 	var dishName = "#dish-name-";
-//	var dishIngr = "#dish-ingredients-";
+	var dishIngr = "#dish-ingredients-";
 //	var dishRec = "#dish-recipe-";
 	
 	
@@ -69,28 +63,38 @@ $(document).ready( function() {
 		
 		for (var index = 0; index < databaseSize; index++) {
 			
-//			alert("index" + index);
-
 			// changes the source of the img tag with id "dish-img-INDEX" to corresponding source URL in the database
 			$(dishImg + index).attr("src", data.Items[index].ImageURL);  
 
 			// changes the content of the h2 tag with id "dish-name-INDEX" to the corresponding RecipeName in the database
-//			recipeName = ;
 			$(dishName + index).text(data.Items[index].RecipeName);
-
-			// removes the 'spaces' in the recipe name -- used to create a new web page
-//			shortName = recipeName.replace(/\s+/g, '');
-//
-//			// changes the href of the a tag with id "dish-ingredients-INDEX"
-//			var tempIngredientURL = webpageURL + "ingredients/" + shortName;
-//			$(dishIngr + index).attr("href", tempIngredientURL);
-//			
-//			// changes the href of the a tag with id "dish-recipes-INDEX"
-//			var tempRecipeURL = webpageURL + "recipes/" + shortName;
-//			$(dishRec + index).attr("href", tempRecipeURL);
 
 		}
 
+	});
+			
+	$(dishIngr+"0").click(function(){
+		sessionStorage.setItem("global_index", 0);
+	});
+	
+	$(dishIngr+"1").click(function(){
+		sessionStorage.setItem("global_index", 1);
+	});
+	
+	$(dishIngr+"2").click(function(){
+		sessionStorage.setItem("global_index", 2);
+	});
+	
+	$(dishIngr+"3").click(function(){
+		sessionStorage.setItem("global_index", 3);
+	});
+	
+	$(dishIngr+"4").click(function(){
+		sessionStorage.setItem("global_index", 4);
 	});	
 	
+	$(dishIngr+"5").click(function(){
+		sessionStorage.setItem("global_index", 5);
+	});
+		
 });
