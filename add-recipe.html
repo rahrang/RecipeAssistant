@@ -69,7 +69,8 @@
 		
 		<div class="col-sm-2"></div>
 		<div class="col-sm-8">
-			
+
+			<p id="instr" class="text-center open-sans">You must enter values for the "Recipe Name", "Ingredients", and "Directions" to update the recipe database.</p>			
 			<form id="input-recipe" method="post">
 				
 				<b>Recipe Name</b> <br> 
@@ -80,7 +81,7 @@
 				<textarea id="ingredients" name="ingred" rows="10" cols="70"></textarea> <br><br>
 				<b>Directions</b> (please enter one step per line) <br>
 				<textarea id="steps" name="direct" rows="10" cols="70"></textarea> <br><br>
-				<input id="submit-button" onclick="submitForm()" type="submit" value="Submit">
+				<input id="submit-button" class="text-uppercase" onclick="submitForm()" value="Submit" type="submit">
 				
 			</form>
 			
@@ -96,6 +97,8 @@
 	</div>
 </div>
 
+
+<!--Process and post the entered recipe to database.-->
 <script>
 	
 var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
@@ -104,36 +107,26 @@ function submitForm() {
 	
 	"use strict";
 
-//	alert("button clicked!");
 	var recipe_name = document.getElementById("recipe_name").value;
-//	alert(recipe_name);
 	var directions = document.getElementById("steps").value;
-//	alert(directions);
 	var ingred = document.getElementById("ingredients").value;
-//	alert(ingred);
 	var image_link = document.getElementById("image_link").value;
-//	alert(image_link);
-	
+				
 	var to_post = JSON.stringify(
 	{
-		"type": "POST",
-		"data": {
-			"TableName": "Recipes",
-//			"Item": {
-			"Items": {
-				"RecipeName": recipe_name,
-				"Directions": directions,
-				"Ingredients": ingred,
-				"ImageURL": image_link
+		type: "POST",
+		data: {
+			TableName: "Recipes",
+			Item: {
+				RecipeName: recipe_name,
+				Directions: directions,
+				Ingredients: ingred,
+				ImageURL: image_link
 			}
 		}
 	})
-	
-	alert(to_post);
-	
+
 	$.post(databaseURL, to_post);
-	
-	alert("ended");
 	
 };
 	

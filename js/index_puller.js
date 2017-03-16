@@ -6,44 +6,29 @@ $(document).ready( function() {
 //	The URL of our Dynamo database on AWS
 	var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
 	
-//	Change this if/when we publish the website
-//	var webpageURL = "";
-	
-	// data == the entire table
-	// data.Items == the items in the table (each dish/recipe)
-	// data.Count == the number of items in the table (the number of dishes/recipes)
-	// data.Items[0] == the first item in the table (the first dish/recipe)
-	// data.Items[0].RecipeName == the name of the first item in the table (e.g. Cheese and Crackers)
-	// data.Items[0].ImageURL == the image of the first item in the table, as a URL
-	// data.Items[0].Ingredients == the list of ingredients necessary for the first item in the table
-	// data.Items[0].Directions == the list of directions to prepare the first item in the table
-	
-	/*
-		{"Items":
-			
-			[
-				{
-					"RecipeName":"Cheese and Crackers",
-					"Directions":"Open The Cracker Box \n Spread Cheese on Crackers",
-					"Ingredients":"Cheese \n Crackers",
-					"ImageURL":"http://www.wikihow.com/images/5/59/Make-Cheese-Crackers-Intro.jpg"
-				},
+/*
+	{"Items":
 
-				{
-					"RecipeName":"Bacon and Eggs",
-					"Directions":"Crack eggs \n Scramble eggs \n Put bacon in pan \n Cook 10 minutes \n Add eggs \n Cook 3 minutes",
-					"Ingredients":"Bacon \n Eggs",
-					"ImageURL":"https://s-media-cache-ak0.pinimg.com/originals/53/61/61/5361615a85829c30d92fb2d8662a6ae9.jpg"
-				}
-			],
-			
-			"Count":2,
-			"ScannedCount":2
-		}
-	
-	/* we want to iterate through every dish in the table, then pull the data from that dish
-	in order to 'fill out' the corresponding id's (example: dish-img-1) with the correct values
-	from that dish */	
+		[
+			{
+				"RecipeName":"Cheese and Crackers",
+				"Directions":"Open The Cracker Box \n Spread Cheese on Crackers",
+				"Ingredients":"Cheese \n Crackers",
+				"ImageURL":"http://www.wikihow.com/images/5/59/Make-Cheese-Crackers-Intro.jpg"
+			},
+
+			{
+				"RecipeName":"Bacon and Eggs",
+				"Directions":"Crack eggs \n Scramble eggs \n Put bacon in pan \n Cook 10 minutes \n Add eggs \n Cook 3 minutes",
+				"Ingredients":"Bacon \n Eggs",
+				"ImageURL":"https://s-media-cache-ak0.pinimg.com/originals/53/61/61/5361615a85829c30d92fb2d8662a6ae9.jpg"
+			}
+		],
+
+		"Count":2,
+		"ScannedCount":2
+	}
+*/	
 	
 	//	Get the number of dishes/recipes in the database
 	var databaseSize = 0;
@@ -51,14 +36,14 @@ $(document).ready( function() {
 		databaseSize = data.Count;
 	});
 		
-//	variables to help us update corresponding html tags
+	//	variables to help us update corresponding html tags
 	var dishImg = "#dish-img-";
 	var dishName = "#dish-name-";
 	var dishIngr = "#dish-ingredients-";
-//	var dishRec = "#dish-recipe-";
+	var dishRec = "#dish-recipe-";
 	
 	
-//	the function to pull from the database and update the html tags
+	//	the function to pull from the database and update the html tags
 	$.get(databaseURL, function(data) {
 		
 		for (var index = 0; index < databaseSize; index++) {
@@ -72,6 +57,8 @@ $(document).ready( function() {
 		}
 
 	});
+	
+	// for the ingredient links on the index page
 			
 	$(dishIngr+"0").click(function(){
 		sessionStorage.setItem("global_index", 0);
@@ -94,6 +81,33 @@ $(document).ready( function() {
 	});	
 	
 	$(dishIngr+"5").click(function(){
+		sessionStorage.setItem("global_index", 5);
+	});
+	
+	
+	// for the recipe links on the index page
+	
+	$(dishRec+"0").click(function(){
+		sessionStorage.setItem("global_index", 0);
+	});
+	
+	$(dishRec+"1").click(function(){
+		sessionStorage.setItem("global_index", 1);
+	});
+	
+	$(dishRec+"2").click(function(){
+		sessionStorage.setItem("global_index", 2);
+	});
+	
+	$(dishRec+"3").click(function(){
+		sessionStorage.setItem("global_index", 3);
+	});
+	
+	$(dishRec+"4").click(function(){
+		sessionStorage.setItem("global_index", 4);
+	});	
+	
+	$(dishRec+"5").click(function(){
 		sessionStorage.setItem("global_index", 5);
 	});
 		

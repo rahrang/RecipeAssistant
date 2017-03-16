@@ -4,7 +4,6 @@
 body {
 	/*background-color: #373737;*/
 	background-color: #95a5a6;
-
 	margin: none;
 	padding: none;
 }
@@ -124,10 +123,11 @@ p#names {
 }
 
 #submit-button {
-	background-color: #1ABC9C;
+	background-color: #95a5a6;
 	color: white;
 	border: solid white 3px;
 	padding: 1%;
+	font-size: 1.25em;
 }
 
 #submit-button:hover {
@@ -146,6 +146,11 @@ p#names {
 
 #ingredients-section, #directions-section {
 	font-size: 1.25em;
+}
+
+p#instr {
+	font-size: 1.125em;
+	font-weight: 400;
 }
 
 /*Style the image slideshow fades*/
