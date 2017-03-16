@@ -54,14 +54,14 @@ $(document).ready( function() {
 	
 	
 //	variables to help us in creating hyperlinks
-	var recipeName = "";
-	var shortName = "";
+//	var recipeName = "";
+//	var shortName = "";
 	
 //	variables to help us update corresponding html tags
 	var dishImg = "#dish-img-";
 	var dishName = "#dish-name-";
-	var dishIngr = "#dish-ingredients-";
-	var dishRec = "#dish-recipe-";
+//	var dishIngr = "#dish-ingredients-";
+//	var dishRec = "#dish-recipe-";
 	
 	
 //	the function to pull from the database and update the html tags
@@ -75,19 +75,19 @@ $(document).ready( function() {
 			$(dishImg + index).attr("src", data.Items[index].ImageURL);  
 
 			// changes the content of the h2 tag with id "dish-name-INDEX" to the corresponding RecipeName in the database
-			recipeName = data.Items[index].RecipeName;
-			$(dishName + index).text(recipeName);
+//			recipeName = ;
+			$(dishName + index).text(data.Items[index].RecipeName);
 
 			// removes the 'spaces' in the recipe name -- used to create a new web page
-			shortName = recipeName.replace(/\s+/g, '');
-
-			// changes the href of the a tag with id "dish-ingredients-INDEX"
-			var tempIngredientURL = webpageURL + "ingredients/" + shortName;
-			$(dishIngr + index).attr("href", tempIngredientURL);
-			
-			// changes the href of the a tag with id "dish-recipes-INDEX"
-			var tempRecipeURL = webpageURL + "recipes/" + shortName;
-			$(dishRec + index).attr("href", tempRecipeURL);
+//			shortName = recipeName.replace(/\s+/g, '');
+//
+//			// changes the href of the a tag with id "dish-ingredients-INDEX"
+//			var tempIngredientURL = webpageURL + "ingredients/" + shortName;
+//			$(dishIngr + index).attr("href", tempIngredientURL);
+//			
+//			// changes the href of the a tag with id "dish-recipes-INDEX"
+//			var tempRecipeURL = webpageURL + "recipes/" + shortName;
+//			$(dishRec + index).attr("href", tempRecipeURL);
 
 		}
 
