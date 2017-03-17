@@ -144,6 +144,10 @@ p#names {
 	color: white;
 }
 
+.wrapper {
+	white-space: pre-wrap;
+}
+
 #ingredients-section, #directions-section {
 	font-size: 1.25em;
 }
