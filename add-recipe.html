@@ -68,7 +68,7 @@
 		<div class="col-sm-8">
 
 			<p id="instr" class="text-center open-sans">You must enter values for the "Recipe Name", "Ingredients", and "Directions" to update the recipe database.</p>			
-			<form id="input-recipe" method="post">
+			<form id="input-recipe" method="post" action="index.html">
 				
 				<b>Recipe Name</b> <br> 
 				<input type="text" id="recipe_name" name="recp"> <br><br>
@@ -123,7 +123,7 @@ function submitForm() {
 		}
 	})
 
-	$.post(databaseURL, to_post);	
+	$.post(databaseURL, to_post);
 	
 };
 	
