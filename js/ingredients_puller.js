@@ -19,7 +19,10 @@ $(document).ready( function() {
 		$("#recipe-image").attr("src", data.Items[main_index].ImageURL);  
 
 		// changes the content of the p tag with id "ingredients-section" to corresponding recipe ingredients in the database
-		$("#ingredients-section").text(data.Items[main_index].Ingredients);
+		var ingred = data.Items[main_index].Ingredients;
+		$("#ingredients-section").text(ingred);
+		
+
 
 	});
 		
