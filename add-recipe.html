@@ -40,6 +40,9 @@
 		<div class="collapse navbar-collapse" id="navigator">
 			<ul id="main-navigation" class="nav navbar-nav navbar-right">
 				<li>
+					<a href="index.html"><img class="icon" src="icons/home.png" alt="home icon"></a>
+				</li>
+				<li>
 					<a href="javascript:history.back()"><img class="icon" src="icons/back.png" alt="go back"></a>
 				</li>
 				<li>
@@ -103,7 +106,7 @@ var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/R
 function submitForm() {
 	
 	"use strict";
-
+	
 	var recipe_name = document.getElementById("recipe_name").value;
 	var directions = document.getElementById("steps").value;
 	var ingred = document.getElementById("ingredients").value;
