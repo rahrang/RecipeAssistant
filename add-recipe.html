@@ -81,7 +81,7 @@
 				<textarea id="ingredients" name="ingred" rows="10" cols="70"></textarea> <br><br>
 				<b>Directions</b> (please enter one step per line) <br>
 				<textarea id="steps" name="direct" rows="10" cols="70"></textarea> <br><br>
-				<input id="submit-button" class="text-uppercase" onclick="submitForm()" value="Submit" type="submit">
+				<input id="submit-button" class="text-uppercase" value="Submit" type="submit">
 				
 			</form>
 			
@@ -97,40 +97,7 @@
 	</div>
 </div>
 
-
-<!--Process and post the entered recipe to database.-->
-<script>
-	
-var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
-	
-function submitForm() {
-	
-	"use strict";
-	
-	var recipe_name = document.getElementById("recipe_name").value;
-	var directions = document.getElementById("steps").value;
-	var ingred = document.getElementById("ingredients").value;
-	var image_link = document.getElementById("image_link").value;
-				
-	var to_post = JSON.stringify(
-	{
-		type: "POST",
-		data: {
-			TableName: "Recipes",
-			Item: {
-				RecipeName: recipe_name,
-				Directions: directions,
-				Ingredients: ingred,
-				ImageURL: image_link
-			}
-		}
-	})
-
-	$.post(databaseURL, to_post);
-	
-};
-	
-</script>
+<script src="js/add-recipe_puller.js" type="text/javascript"></script>
 
 </body>
 </html>

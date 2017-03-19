@@ -99,7 +99,7 @@ function transitionRecipeState()
     var recipeName = String(this.event.request.intent.slots.recipeName.value);
     var self = this;
     rp({
-        uri: "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes",
+        uri: "https://hrw08iio3e.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=RecipeList",
         json: true
     })
     .catch(error => {

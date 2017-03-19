@@ -4,7 +4,7 @@ $(document).ready( function() {
 	"use strict";
 	
 //	The URL of our Dynamo database on AWS
-	var databaseURL = "https://elpwebsphe.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=Recipes";
+	var databaseURL = "https://hrw08iio3e.execute-api.us-east-1.amazonaws.com/prod/RecipeUpdate?TableName=RecipeList";
 	
 	var main_index = sessionStorage.getItem("global_index");
 		
@@ -16,10 +16,10 @@ $(document).ready( function() {
 		$("#recipe-title").text(data.Items[main_index].RecipeName);
 
 		// changes the source of the img tag with id "dish-img-INDEX" to corresponding source URL in the database
-		$("#recipe-image").attr("src", data.Items[main_index].ImageURL);  
+		$("#recipe-image").attr("src", data.Items[main_index].ImageSRC);  
 
 		// changes the content of the p tag with id "ingredients-section" to corresponding recipe ingredients in the database
-		var ingred = data.Items[main_index].Ingredients;
+		var ingred = data.Items[main_index].IngredientsList;
 		$("#ingredients-section").text(ingred);
 		
 
