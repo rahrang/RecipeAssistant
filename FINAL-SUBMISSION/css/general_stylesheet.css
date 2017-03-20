@@ -1,0 +1,192 @@
+@charset "utf-8";
+/* CSS Document */
+
+body {
+	/*background-color: #373737;*/
+	background-color: #95a5a6;
+	margin: none;
+	padding: none;
+}
+
+nav#navigation-bar {
+	position: absolute;
+	display: inline;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 5;
+	background-color: rgba(0, 0, 0, 0.5);
+	border: none;
+	border-radius: none;
+	padding-bottom: 0.5%;
+}
+
+h1 {
+	text-align: center;
+	font-family: "Quicksand";
+	font-size: 50px;
+	color:white;
+}
+
+h2 {
+	font-size: 2.125em;
+}
+
+.table--recipe {
+	margin: 0 auto;
+	margin-top: 1%;
+
+}
+.table--item {
+	border-style: dotted;
+	border-color: white;
+	padding: 2%;
+	display: inline-block;
+	margin-left: 9.48%;
+	margin-top: 3%;
+}
+
+.table--item:hover{
+	border: 4px dotted white;
+  }
+
+.recipe--pic img{
+	border-radius: 12%;
+	width: 225px;
+	height: 225px;
+}
+
+.recipe--name {
+	text-align: center;
+	margin-top: 5%;
+	font-size: 1.375em;
+	font-family: "Open Sans";
+	color: white;
+
+}
+
+.icon--wrap {
+	margin-left: 15%;
+}
+.icon--wrap img{
+	display: inline-block;
+	float: center;
+	margin-left: 15%;
+	width: 18%;
+	height: 19%;
+
+}
+
+a#logo {
+	color: white;
+	margin-top: 2.5%;
+	font-size: 3em;
+}
+
+.icon {
+	opacity: 1;
+	height: 50%;
+	width: 50%;
+}
+
+.icon:hover {
+	opacity: 0.75;
+}
+
+.raleway {
+	font-family:Raleway;
+
+}
+
+.open-sans {
+	font-family: Open Sans, "sans-serif";
+}
+
+div#footer {
+	margin-top: 5%;
+	padding-top: 1%;
+	padding-bottom: 0.5%;
+	/*padding: 0.5%;*/
+	background-color: rgba(0, 0, 0, 0.85);
+	color: white;
+}
+
+p#names {
+	margin-left: 2.5%;
+	letter-spacing: 0.125em;
+	font-size: 1.125em;
+	line-height: 1.375em;
+}
+
+.buffer {
+	margin-top: 4%;
+}
+
+#submit-button {
+	background-color: #95a5a6;
+	color: white;
+	border: solid white 3px;
+	padding: 1%;
+	font-size: 1.25em;
+}
+
+#submit-button:hover {
+	background-color: white;
+	color: #373737;
+}
+
+.main-img {
+	height: 50vh;
+	width: 60vh;
+}
+
+.white {
+	color: white;
+}
+
+.wrapper {
+	white-space: pre-wrap;
+}
+
+#ingredients-section, #directions-section {
+	font-size: 1.25em;
+}
+
+p#instr {
+	font-size: 1.125em;
+	font-weight: 400;
+}
+
+/*Style the image slideshow fades*/
+
+.animate-fading {
+	-webkit-animation: fading 6s infinite;
+	animation: fading 6s infinite;
+}
+
+@-webkit-keyframes fading {	
+	0% {opacity:0.5;}
+	5% {opacity:1;}
+/*	20% {opacity:1}*/
+	95% {opacity:1;}
+	100% {opacity:0.5;}
+}
+
+@keyframes fading {	
+	0% {opacity:0.5;}
+	5% {opacity:1;}
+/*	20% {opacity:1}*/
+	95% {opacity:1;}
+	100% {opacity:0.5;}
+}
+
+@media(max-width: 800px) {
+	.table--item {
+		margin-left: 14%;
+		margin-top: 5%;
+		padding: 5%;
+	}
+	.icon--wrap img{
+		height:2%;
+	}
+}

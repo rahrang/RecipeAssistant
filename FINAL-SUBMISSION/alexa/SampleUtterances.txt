@@ -1,0 +1,36 @@
+RecipeIntent how do i make {recipeName}
+RecipeIntent find {recipeName}
+RecipeIntent i would like to make {recipeName}
+RecipeIntent i'd like to make {recipeName}
+RecipeIntent how to make {recipeName}
+RecipeIntent how to cook {recipeName}
+RecipeIntent how do i cook {recipeName}
+RecipeIntent i would like to cook {recipeName}
+RecipeIntent i'd like to cook {recipeName}
+IngredientsIntent ingredients
+IngredientsIntent i'd like the ingredients
+IngredientsIntent i would like the ingredients
+IngredientsIntent i want the ingredients
+IngredientsIntent what are the ingredients
+IngredientsIntent tell me the ingredients
+DirectionsIntent directions
+DirectionsIntent i'd like the directions
+DirectionsIntent i would like the directions
+DirectionsIntent i want the directions
+DirectionsIntent what are the directions
+DirectionsIntent read the directions
+DirectionsIntent read recipe
+DirectionsIntent instructions
+DirectionsIntent read instructions
+NextIntent start
+NextIntent next
+NextIntent next ingredient
+NextIntent next direction
+NextIntent what is next
+PreviousIntent previous
+PreviousIntent last
+PreviousIntent previous ingredient
+PreviousIntent previous direction
+PreviousIntent last ingredient
+PreviousIntent last direction
+AMAZON.HelpIntent what can i say
