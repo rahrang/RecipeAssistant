@@ -103,12 +103,11 @@ function transitionRecipeState()
         json: true
     })
     .catch(error => {
-        speechOutput += "Sorry, an error occured while getting the recipes.";
+        var speechOutput = "Sorry, an error occured while getting the recipes.";
         self.emit(":tell", speechOutput, speechOutput);
     })
     .then(data =>
     {
-        speechOutput += "success";
         data['Items'].forEach(recipe => {
             const name = recipe['RecipeName'].toLowerCase();
             database[name] = recipe;
@@ -118,9 +117,9 @@ function transitionRecipeState()
             var recipe = database[recipeName];
             Object.assign(this.attributes, {
                 "name": recipeName,
-                "directions": recipe['Directions'].split("\n").filter(function(e1) {return e1.length!=0;}),
+                "directions": recipe['PrepDirections'].split("\n").filter(function(e1) {return e1.length!=0;}),
                 "dirPos": 0,
-                "ingredients": recipe['Ingredients'].split("\n").filter(function(e1) {return e1.length!=0;}),
+                "ingredients": recipe['IngredientsList'].split("\n").filter(function(e1) {return e1.length!=0;}),
                 "ingPos": 0
             });
             this.handler.state = SKILL_STATES.RECIPE;
@@ -203,6 +202,7 @@ var ingredientStateHandlers = Alexa.CreateStateHandler(SKILL_STATES.INGREDIENTS,
             this.handler.state = SKILL_STATES.DIRECTIONS;
             this.emit(":ask", speechOutput, speechOutput);
         } else {
+            // shouldn't happen, but catch all
             var speechOutput = "You have finished the ingredients. The first direction is to " + this.attributes['directions'][0];
             this.handler.state = SKILL_STATES.DIRECTIONS;
             this.emit(":ask", speechOutput, speechOutput);
